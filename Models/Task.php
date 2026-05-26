@@ -1,19 +1,19 @@
 <?php
-
+ 
 require 'Model.php';
-
-
+#[AllowDynamicProperties]
+ 
 class Task extends Model
 {
-
+    
     public $color = 'black';
 
-    public function __construct(
-        public $title,
-        public $completed = false
-    )
-    {
-    }
+    // public function __construct(
+    //     public $title = '',
+    //     public $completed = false
+    // )
+    // {
+    // }
 
     public function complete()
     {

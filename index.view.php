@@ -24,6 +24,13 @@
             <li style="color: <?= $task->color ?>;"><?= $task->title ?></li>
         <?php endforeach ?>
     </ul>
+
+    <form action="create-task.php" method="POST">
+        <input type="text" name="title" >
+        <input type="color" name="color" value="#000000">
+        <button type="submit">Guardar</button>
+    </form>
+        
 </body>
 
 </html>
