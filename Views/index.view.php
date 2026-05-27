@@ -9,6 +9,12 @@
 </head>
 
 <body>
+    <nav>
+        <a href="Controllers/contact.php">Contacto</a>
+        <a href="Controllers/about.php">Nosotros</a>
+        <a href="Controllers/services.php">Servicios</a>
+        
+    </nav>
     <h1><?= $greeting; ?></h1>
 
     <h2>Completas</h2>
