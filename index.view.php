@@ -20,6 +20,11 @@
                     <input type="hidden" name="id" value="<?= $task->id ?>">
                     <button type="submit"> ➖ </button>
                 </form>
+
+                 <form onsubmit="return confirm('Estas seguro de eliminir el registro?')" style="display: inline;" action="delete-task.php" method="POST">
+                    <input type="hidden" name="id" value="<?= $task->id ?>">
+                    <button type="submit"> ❌ </button>
+                </form>
             </li>
         <?php endforeach ?>
     </ul>
@@ -33,6 +38,11 @@
                     <input type="hidden" name="id" value="<?= $task->id ?>">
                     <button type="submit">✔</button>
                 </form>
+                <form onsubmit="return confirm('Estas seguro de eliminir el registro?')" style="display: inline;" action="delete-task.php" method="POST">
+                    <input type="hidden" name="id" value="<?= $task->id ?>">
+                    <button type="submit"> ❌ </button>
+                </form>
+
             </li>
         <?php endforeach ?>
     </ul>
