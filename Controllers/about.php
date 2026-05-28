@@ -3,6 +3,6 @@
 
 
 
-require '../Views/about.view.php';
+require 'Views/about.view.php';
 
 ?>

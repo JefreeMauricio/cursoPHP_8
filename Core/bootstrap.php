@@ -10,7 +10,10 @@ if ($config['error_handling']) {
 
 require 'database/Connection.php';
 require 'database/QueryBuilder.php';
-
+require 'Core/Router.php';
+require 'Core/database/Request.php';
+require 'Models/Task.php';
+require 'functions.php';
 
 $pdo = Connection::start($config['database']);
 
