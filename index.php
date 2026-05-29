@@ -1,5 +1,5 @@
 <?php
-$query = require 'Core/bootstrap.php';
+require 'Core/bootstrap.php';
 
 
 $routes = require 'routes.php';
