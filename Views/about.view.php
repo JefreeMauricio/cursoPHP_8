@@ -1,15 +1,7 @@
-<!DOCTYPE html>
+<?php require('partials/head.view.php'); ?>
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros</title>
-</head>
-<body>
+
     <h1>Nosotros</h1>
-</body>
-</html>
 
-
+<?php require('partials/footer.view.php'); ?>
 

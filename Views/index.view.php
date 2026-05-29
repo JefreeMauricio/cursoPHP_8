@@ -1,20 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php require('partials/head.view.php'); ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <nav>
-        <a href="contact">Contacto</a>
-        <a href="about">Nosotros</a>
-        <a href="services">Servicios</a>
-        
-    </nav>
     <h1><?= $greeting; ?></h1>
 
     <h2>Completas</h2>
@@ -58,7 +43,5 @@
         <input type="color" name="color" value="#000000">
         <button type="submit">Guardar</button>
     </form>
-        
-</body>
 
-</html>
+<?php require('partials/footer.view.php'); ?>
