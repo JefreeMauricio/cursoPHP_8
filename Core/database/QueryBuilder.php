@@ -9,6 +9,13 @@ class QueryBuilder{
         $this->pdo = $pdo;
     }
 
+     public function find($table, $id)
+    {
+        $query = $this->pdo->prepare("select * from {$table} where id=:id limit 0,1");
+        $query->execute(['id' => $id]);
+
+        return $query->fetch(PDO::FETCH_ASSOC);
+    }
     public function selectAll($table, $class)
     {
         $query = $this->pdo->prepare("select * from {$table}");

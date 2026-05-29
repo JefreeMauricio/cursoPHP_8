@@ -6,8 +6,6 @@ Task::create([
     
 ]);
 
-
-
 header('Location: /');
 
 
