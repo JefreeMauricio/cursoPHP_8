@@ -10,6 +10,15 @@ class Model
         $this->properties = $properties;
     }
 
+    public static function all()
+    {
+        $model = new static;
+        $rows  = App::get('database')
+            ->selectAll($model->getTable());
+
+        return array_map(fn ($row) => new static($row), $rows); // array($model) {
+    }
+
     public static function create($properties)
     {
         $model = new static($properties); //Task
@@ -60,5 +69,14 @@ class Model
     {
         $this->properties = array_merge($this->properties, $properties);
         return $this;
+    }
+
+    public function __get($name)
+    {
+        if (array_key_exists($name, $this->properties)) {
+            return $this->properties[$name];
+        }
+        
+        return null;
     }
 }
