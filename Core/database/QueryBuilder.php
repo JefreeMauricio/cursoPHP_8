@@ -16,6 +16,23 @@ class QueryBuilder{
 
         return $query->fetch(PDO::FETCH_ASSOC);
     }
+
+     public function findBy($table, $params)
+    {
+
+        $cols = array_keys($params);
+        $cols = implode(' AND ',array_map(function ($col) {
+            return"{$col}=:{$col}"; 
+
+        }, $cols));
+        
+
+        $query = $this->pdo->prepare("select * from {$table} where {$cols}");
+        $query->execute($params);
+
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function selectAll($table)
     {
         $query = $this->pdo->prepare("select * from {$table}");

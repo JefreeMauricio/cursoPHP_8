@@ -79,4 +79,13 @@ class Model
         
         return null;
     }
+
+    public static function findBy($params)
+    {
+        $model = new static;
+        $rows  = App::get('database')
+            ->findBy($model->getTable(), $params);
+
+        return array_map(fn ($row) => new static($row), $rows); // array($model) {
+    }
 }

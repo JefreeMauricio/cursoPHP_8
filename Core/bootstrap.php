@@ -5,6 +5,7 @@ require 'Core/Router.php';
 require 'Core/database/Request.php';
 require 'Core/database/app.php';
 require 'Models/Task.php';
+require 'Models/User.php';
 require 'functions.php';
 
 App::set('config', require 'config.php');
