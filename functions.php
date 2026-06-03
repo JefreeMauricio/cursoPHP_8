@@ -6,3 +6,8 @@ function dd($value)
 }
 
 
+function view($path, $params = [])
+{
+    extract($params);
+    require "Views/{$path}.view.php";
+}

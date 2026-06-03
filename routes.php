@@ -1,6 +1,6 @@
 <?php
 return [
-    '' => 'Controllers/index.php',
+    '' => ['HomeController', 'show'],
     'about' => 'Controllers/about.php',
     'services' => 'Controllers/services.php', 
     'contact' => 'Controllers/contact.php',
