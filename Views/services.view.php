@@ -1,8 +1,9 @@
-<?php require('partials/head.view.php'); ?>
+<?php require 'Views/partials/head.view.php'; ?>
 
     <h1>Services</h1>
 
-<?php require('partials/footer.view.php'); ?>
+<?php require 'Views/partials/footer.view.php'; ?>
+
 
 
 

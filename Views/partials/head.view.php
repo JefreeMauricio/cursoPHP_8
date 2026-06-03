@@ -15,4 +15,4 @@
 </head>
 
 <body>
-    <?php require('navbar.view.php'); ?>
+    <?php require 'Views/partials/navbar.view.php'; ?>

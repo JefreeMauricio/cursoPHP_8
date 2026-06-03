@@ -1,4 +1,4 @@
-<?php require('partials/head.view.php'); ?>
+<?php require 'Views/partials/head.view.php'; ?>
 
     <h1><?= $greeting; ?></h1>
 
@@ -44,4 +44,5 @@
         <button type="submit">Guardar</button>
     </form>
 
-<?php require('partials/footer.view.php'); ?>
+<?php require 'Views/partials/footer.view.php'; ?>
+
