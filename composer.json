@@ -1,0 +1,20 @@
+{
+    "name": "mauro/curso-php_8",
+    "type": "project",
+    "authors": [
+        {
+            "name": "JefreeMauricio",
+            "email": "jefreegoficial+1@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "classmap": [
+            "./"
+        ],
+         "files": [
+        "functions.php"
+        ]
+    }
+   
+}
