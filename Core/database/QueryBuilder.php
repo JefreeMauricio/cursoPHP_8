@@ -1,4 +1,5 @@
 <?php
+namespace Core\Database;
 
 class QueryBuilder{
 
@@ -14,7 +15,7 @@ class QueryBuilder{
         $query = $this->pdo->prepare("select * from {$table} where id=:id limit 0,1");
         $query->execute(['id' => $id]);
 
-        return $query->fetch(PDO::FETCH_ASSOC);
+        return $query->fetch(\PDO::FETCH_ASSOC);
     }
 
      public function findBy($table, $params)
@@ -30,7 +31,7 @@ class QueryBuilder{
         $query = $this->pdo->prepare("select * from {$table} where {$cols}");
         $query->execute($params);
 
-        return $query->fetchAll(PDO::FETCH_ASSOC);
+        return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     public function selectAll($table)
@@ -39,7 +40,7 @@ class QueryBuilder{
     
         $query ->execute();
 
-        return $query ->fetchAll(PDO::FETCH_ASSOC);
+        return $query ->fetchAll(\PDO::FETCH_ASSOC);
     }
     public function create($table, $params)
     {
@@ -51,7 +52,7 @@ class QueryBuilder{
         try {
             $query = $this->pdo->prepare($sql);
             $query->execute($params);
-        } catch (PDOException $error) {
+        } catch (\PDOException $error) {
             die($error->getMessage());
         }
     }
@@ -71,7 +72,7 @@ class QueryBuilder{
             $query = $this->pdo->prepare($sql);
 
             $query->execute([...$params, 'id' => $id]);
-        } catch (PDOException $error) {
+        } catch (\PDOException $error) {
             die($error->getMessage());
         }
     }
@@ -85,7 +86,7 @@ class QueryBuilder{
             $query = $this->pdo->prepare($sql);
 
             $query->execute(['id' => $id]);
-        } catch (PDOException $error) {
+        } catch (\PDOException $error) {
             die($error->getMessage());
         }
     }

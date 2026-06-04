@@ -1,6 +1,6 @@
 <?php
  
-require 'Model.php';
+namespace App\Models;
 #[AllowDynamicProperties]
  
 class Task extends Model

@@ -1,5 +1,6 @@
 <?php
-
+namespace App\Controllers;
+use App\Models\Task;
 class TasksController
 {
     
@@ -32,7 +33,7 @@ class TasksController
     }
     public function delete()
     {
-        App::get('database')->delete('tasks',$_POST['id']);
+        \Core\App::get('database')->delete('tasks',$_POST['id']);
 
         return redirect('/');
     }
