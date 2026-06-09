@@ -6,13 +6,13 @@
     <ul>
         <?php foreach ($completedTasks as $task) : ?>
             <li style="color: <?= $task->color ?>;"><?= $task->title ?>
-                <form style="display: inline;" action="task/toggle" method="POST">
+                <form style="display: inline;" action="task/toggle/<?= $task->id ?>" method="POST">
                     <input type="hidden" name="completed" value="0" >
                     <input type="hidden" name="id" value="<?= $task->id ?>">
                     <button type="submit"> ➖ </button>
                 </form>
 
-                 <form onsubmit="return confirm('Estas seguro de eliminir el registro?')" style="display: inline;" action="task/delete" method="POST">
+                 <form onsubmit="return confirm('Estas seguro de eliminir el registro?')" style="display: inline;" action="task/delete/<?= $task->id ?>" method="POST">
                     <input type="hidden" name="id" value="<?= $task->id ?>">
                     <button type="submit"> ❌ </button>
                 </form>
@@ -24,12 +24,12 @@
     <ul>
         <?php foreach ($pendingTasks as $task) : ?>
             <li style="color: <?= $task->color ?>;"><?= $task->title ?>
-                <form style="display: inline;" action="task/toggle" method="POST">
+                <form style="display: inline;" action="task/toggle/<?= $task->id ?>" method="POST">
                     <input type="hidden" name="completed" value="1" >
                     <input type="hidden" name="id" value="<?= $task->id ?>">
                     <button type="submit">✔</button>
                 </form>
-                <form onsubmit="return confirm('Estas seguro de eliminir el registro?')" style="display: inline;" action="task/delete" method="POST">
+                <form onsubmit="return confirm('Estas seguro de eliminir el registro?')" style="display: inline;" action="task/delete/<?= $task->id ?>" method="POST">
                     <input type="hidden" name="id" value="<?= $task->id ?>">
                     <button type="submit"> ❌ </button>
                 </form>

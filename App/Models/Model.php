@@ -91,4 +91,17 @@ class Model
 
         return array_map(fn ($row) => new static($row), $rows); // array($model) {
     }
+
+    public static function destroy($id)
+    {
+        $model = new static;
+        App::get('database')->delete($model->getTable(), $id);
+    }
+
+    public function delete()
+    {
+        App::get('database')->delete($this->getTable(), $this->properties['id']);
+        
+        return true;
+    }
 }

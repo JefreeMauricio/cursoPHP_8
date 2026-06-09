@@ -18,7 +18,7 @@ class TasksController
         
  
     }
-    public function toggle()
+    public function toggle($taskId)
     {
         $task = Task::find($_POST['id']);
 
@@ -31,9 +31,11 @@ class TasksController
 
         return redirect('/');
     }
-    public function delete()
+    public function delete($taskId)
     {
-        \Core\App::get('database')->delete('tasks',$_POST['id']);
+        $task = Task::find($_POST['id']);
+
+        $task->delete();
 
         return redirect('/');
     }

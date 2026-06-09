@@ -1,13 +1,20 @@
 <?php
-return [
-    ''            => ['HomeController' , 'show'      ],
-    'about'       => ['PagesController', 'about'     ],
-    'services'    => ['PagesController', 'services'  ], 
-    'contact'     => ['PagesController', 'contact'   ],
-    'task/create' => ['TasksController', 'create'    ],
-    'task/toggle' => ['TasksController', 'toggle'    ],
-    'task/delete' => ['TasksController', 'delete'    ],
-    'login-form'  => ['LoginController', 'show'],
-    'login'       => ['LoginController', 'login'     ],
-    'logout'      => ['LoginController', 'logout'    ],
-];
+use App\Controllers\HomeController;
+use App\Controllers\PagesController;
+use App\Controllers\TasksController;
+use App\Controllers\LoginController;
+use Pecee\SimpleRouter\SimpleRouter;
+
+SimpleRouter::get  ('/',           [HomeController ::class, 'show'    ]);
+SimpleRouter::get  ('about',       [PagesController::class, 'about'   ]);
+SimpleRouter::get  ('services',    [PagesController::class, 'services']);
+SimpleRouter::get  ('contact',     [PagesController::class, 'contact' ]);
+SimpleRouter::post ('task/create', [TasksController::class, 'create'  ]);
+SimpleRouter::post ('task/toggle/{id}', [TasksController::class, 'toggle'  ]);
+SimpleRouter::post ('task/delete/{id}', [TasksController::class, 'delete'  ]);
+SimpleRouter::get  ('login',  [LoginController::class, 'show'    ]);
+SimpleRouter::post ('login',       [LoginController::class, 'login'   ]);
+SimpleRouter::post ('logout',      [LoginController::class, 'logout'  ]);
+SimpleRouter::start();
+
+
