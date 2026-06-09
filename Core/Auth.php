@@ -4,7 +4,7 @@ class Auth
 {
     public static function tryLogin($email, $password)
     {
-       $users = User::findBy(['email'=>$email]);
+       $users = User::where('email', $email)->first();
 
        if (empty($users)) {
            return false;

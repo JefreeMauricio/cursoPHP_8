@@ -1,16 +1,11 @@
 <?php
 use Core\App;
-use Core\Database\QueryBuilder;
-use Core\Database\Connection;
 
 
 App::set('config', require 'config.php');
 
 $config = App::get('config');
 
-App::set('database', new QueryBuilder(
-    Connection::start(App::get('config')['database'])
-));
 
 
 
